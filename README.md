@@ -8,7 +8,7 @@ The methods and estimates contained within this repository were used as a sensit
 
      - *Tip*: Julia ships with the Julia version manager [Juliaup](https://github.com/JuliaLang/juliaup) which is useful in this case for handling Julia versions. To add the option of running Julia version 1.6 to your machine type the following in the terminal.
 
-```bash
+```bash 
 juliaup add 1.6
 ```
 To run code using a specific version, as shown below in the replication code, you may indicate a version using `+version` ie.
