@@ -6,26 +6,26 @@ The methods and estimates contained within this repository were used as a sensit
 # Requirements
 1. *Julia* is free and available for download [here](https://julialang.org/). Estimation of the SC-HFCs for the `GIVE` and `Meta-Analysis` damage modules, and the input files for `DSCIM` was performed on Julia 1.6. While newer versions of *Julia* are compatible with all the code (e.g., 1.7 or 1.8), the random number generators were updated and results might not be identical due to random differences in the random parameters underlying the Monte Carlo runs of GIVE and the Meta-Analysis. In addition, **Julia 1.6** should be used to avoid errors due to compatibility with environment and package version files (`Manifest.toml` and `Project.toml` files, which should be preserved in order to replicate the numbers in this repository). Install *Julia* and ensure that it can be invoked (ran) from where the replication repository is to be cloned ("in your path"). 
 
-     - *Tip*: Julia ships with the Julia version manager [Juliaup](https://github.com/JuliaLang/juliaup) which is useful in this case for handling Julia versions. To add the option of running Julia version 1.6 to your machine type the following in the terminal.
+     - Julia ships with the Julia version manager [Juliaup](https://github.com/JuliaLang/juliaup) which is useful in this case for handling Julia versions. To add the option of running Julia version 1.6 to your machine type the following in the terminal.
 
-```bash 
-juliaup add 1.6
-```
-To run code using a specific version, as shown below in the replication code, you may indicate a version using `+version` ie.
+          ```bash 
+          juliaup add 1.6
+          ```
+          To run code using a specific version, as shown below in the replication code, you may indicate a version using `+version` ie.
 
-```bash
-julia +1.6 myfile.jl
-```
+          ```bash
+          julia +1.6 myfile.jl
+          ```
 
-You will also need to add the Mimi model registry to your machine. On the command line (after installing Julia), Type `julia` and you will see the Julia interface appear. Then type `]` and the `pkg` indicator will appear. Next, type: 
+          You will also need to add the Mimi model registry to your machine. On the command line (after installing Julia), Type `julia` and you will see the Julia interface appear. Then type `]` and the `pkg` indicator will appear. Next, type: 
 
-```
-registry add https://github.com/mimiframework/MimiRegistry.git`
-```
+          ```
+          registry add https://github.com/mimiframework/MimiRegistry.git`
+          ```
 
-You should now be ready to run the `GIVE` and the `Meta-Analysis` models, and create the inputs for `DSCIM` using the steps outlined in each of their READMEs. 
+          You should now be ready to run the `GIVE` and the `Meta-Analysis` models, and create the inputs for `DSCIM` using the steps outlined in each of their READMEs. 
 
-2. *R* is free and available for download [here](https://www.r-project.org/). The *RStudio* integrated development environment is useful for replication, it is free and available for download [here](https://www.rstudio.com/products/rstudio/). *R* is used to collect the estimates from each damage module and create [a table of unrounded annual SC-HFCs](EPA/output/scghg_annual.csv). 
+2. *R* is free and available for download [here](https://www.r-project.org/). The *RStudio* integrated development environment is useful for replication, it is free and available for download [here](https://www.rstudio.com/products/rstudio/). *R* is used to collect the estimates from each damage module and create [a table of unrounded annual SC-HFCs](EPA/output/schfc_annual.csv). 
 
 3. *Anaconda* is free and available for download [here](https://www.anaconda.com/). Other distributions can be used, too, such as [miniconda](https://docs.conda.io/en/latest/miniconda.html), or [mamba](https://mamba.readthedocs.io/en/latest/). Regardless of the user's desired distribution, *conda* packages are used to perform estimation of the `DSCIM` damage module. 
 
@@ -41,12 +41,12 @@ git clone https://github.com/USEPA/schfc
 Alternatively, you can make a `fork` of this repository and work from the fork in the same way. This allows for development on the `fork` while preserving its relationship with this repository.
 
 # Estimating the SC-HFCs
-Estimation of the three damage modules and their SC-HFCs is outlined below. For convenience, this repository already includes the completed model runs (in each damage module's `output` subdirectory), the full distributions of their estimates (in each damage module's `output\full_distributions` subdirectory), and [the final table of the combines estimates](/EPA/output/schfcs_annual.csv) of annual SC-HFCs.
+Estimation of the three damage modules and their SC-HFCs is outlined below. For convenience, this repository already includes the completed model runs (in each damage module's `output` subdirectory), the full distributions of their estimates (in each damage module's `output\full_distributions` subdirectory), and [the final table of the combined estimates](/EPA/output/schfc_annual.csv) of annual SC-HFCs.
 
 Each damage module subdirectory has its own `README` file with instruction on how to run the models using the damage module.  
 
 # Compiling SC-HFC Estimates and Producing the Annual Tables
-This repository already includes all estimates from running the three damage modules outlined above, located in the `output` subdirectory under each module's folder. The combined final estimates (simple averages across the three damage modules) are also already included in this repository under the [EPA](EPA) directory [`EPA\output\schfcs_annual.csv`](/EPA/output/schfcs_annual.csv). A user can replicate this averaging and interpolation to recover the annual SC-HFCs by using the *R* code provided in the [EPA](EPA) directory. Begin by navigating to the [EPA](EPA) directory in the file explorer (or equivalent). Open the *R* project titled `EPA.Rproj`. Then, navigate to the [code](EPA/code) subdirectory and open `compile_schfcs.R`. All remaining steps are documented in the code. 
+This repository already includes all estimates from running the three damage modules outlined above, located in the `output` subdirectory under each module's folder. The combined final estimates (simple averages across the three damage modules) are also already included in this repository under the [EPA](EPA) directory [`EPA\output\schfc_annual.csv`](/EPA/output/schfc_annual.csv). A user can replicate this averaging and interpolation to recover the annual SC-HFCs by using the *R* code provided in the [EPA](EPA) directory. Begin by navigating to the [EPA](EPA) directory in the file explorer (or equivalent). Open the *R* project titled `EPA.Rproj`. Then, navigate to the [code subdirectory](EPA/code) and open `compile_schfcs.R`. All remaining steps are documented in the code. 
 
 # Additional Information
 DSCIM is a product of [The Climate Impact Lab](https://impactlab.org/) in collaboration with [The Rhodium Group](https://rhg.com/). Addional information on DSCIM, including additional functionality, can be found in the user manual ([CIL 2023](DSCIM/CIL_DSCIM_User_Manual.pdf)) and in the [README](DSCIM/README.md) within the [DSCIM](DSCIM) subdirectory.
