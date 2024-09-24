@@ -1,0 +1,21 @@
+## R specific files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+## pesky Mac files
+*.DS_Store
+
+## large files 
+DSCIM/FaIR/gmst_and_ohc/**/*.csv
+DSCIM/FaIR/gmst_and_ohc/**/gmst_pulse*
+DSCIM/FaIR/gmst_and_ohc/**/ohc_pulse*
+
+
+## dscim-facts-epa and facts repositories
+DSCIM/dscim-facts-epa
+DSCIM/facts
+
+## figures
+DSCIM/FaIR/output
