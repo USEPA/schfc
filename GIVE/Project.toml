@@ -1,0 +1,13 @@
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataDeps = "124859b0-ceae-595e-8997-d05f6a7a8dfe"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+Mimi = "e4e893b0-ee5e-52ea-8111-44b3bdec128c"
+MimiFAIRv1_6_2 = "02cc1f66-ff46-4bd7-a247-ac068822e639"
+MimiGIVE = "08b927d4-7a58-4cf8-85d0-bad32a16dfbc"
+MimiRFFSPs = "2561df7e-f865-450a-9449-e82e8f8f9a2f"
+Parquet = "626c502c-15b0-58ad-a749-f091afb673ae"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
